@@ -1,0 +1,58 @@
+1. Configuração do Ambiente
+	a. Criar um repositório no GitHub e compartilhar o link (Ja criado)
+	b. Para este projeto, colocar todos os arquivos na pasta raiz do
+	repositório (sem criar subpastas)
+		IMPORTANTE - Baixar PyCharm
+	c. Criar um ambiente virtual (PyCharm cria automaticamente) e instalar as dependências necessárias: pip install
+	fastapi[all] sqlalchemy psycopg2 pydantic
+	d. Configurar um banco de dados PostgreSQL com SQLAlchemy
+
+2. Modelagem de Dados (SQLAlchemy & Pydantic): Criar os seguintes modelos:
+	Criar schemas Pydantic para entrada e saída de dados.
+		Empresa (Empresa): //entrada
+		id: int (PK)
+		nome: str
+		cnpj: str (único)
+		endereco: str
+		email: str
+		telefone: str
+
+		Obrigação Acessória (ObrigacaoAcessoria):  //saida
+		id: int (PK)
+		nome: str
+		periodicidade: str (mensal, trimestral, anual)
+		empresa_id: int (FK -> Empresa)
+		
+3. Implementação de CRUD de Empresa e ObrigacaoAcessoria utilizando o FastAPI.
+	A entrada e saida que comentei em cima
+	
+4.Banco de Dados e Configuração:
+	Criar um arquivo de configuração .env para armazenar as credenciais do banco de dados.
+	
+		Se você tiver muitas configurações que variem bastante, talvez em ambientes distintos, pode ser útil colocá-las em um arquivo e depois lê-las como se fossem variáveis de ambiente.
+		Essa prática é tão comum que possui um nome, essas variáveis de ambiente normalmente são colocadas em um arquivo .env, e esse arquivo é chamado de "dotenv".
+		https://fastapi.tiangolo.com/pt/advanced/settings/#o-arquivo-env
+		
+	Criar a conexão com o banco de dados usando SQLAlchemy.
+		O SQLAlchemy é uma biblioteca que facilita a comunicação entre programas Python e bancos de dados através do paradigma Object-Relational Mapping (ORM). O ORM permite que os desenvolvedores manipulem bancos de dados usando a linguagem de programação de sua escolha – no caso, Python – em vez de escrever consultas SQL diretamente.
+		https://didatica.tech/sqlalchemy-com-python-na-pratica-aprenda-agora/
+		
+	Criar um script de migração para gerar as tabelas no banco.
+		Fazer um script onde os dados no SQLAlchemy faça as tabelas no PostgreSQL
+			1. Carregar as configurações do banco (por exemplo, do .env).
+			2. Criar a conexão com o PostgreSQL usando SQLAlchemy.
+			3. Executar a criação das tabelas com Base.metadata.create_all(engine).
+
+Testes e Documentação:
+	a. Implementar testes unitários para validar os endpoints.
+		1. Usar uma biblioteca de testes como pytest.
+		2. Criar um banco de dados de testes (geralmente SQLite ou um PostgreSQL temporário).
+		3. Utilizar a lib httpx para simular requisições HTTP dentro do código.
+		4. Testar cada endpoint verificando se as respostas e os status codes estão corretos.
+		
+	b. Garantir que a documentação da API esteja disponível no Swagger UI (na url do navegador /docs).
+		1. Definir corretamente os schemas (Pydantic) e os modelos (SQLAlchemy).
+		2. Criar os endpoints com @app.get(), @app.post(), etc.
+		3. Rodar a API e acessar /docs no navegador.
+		
+	
