@@ -18,3 +18,5 @@ def get_db():
         yield db #Permite que o FastAPI continue executando a requisição
     finally:
         db.close()
+
+#

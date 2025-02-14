@@ -44,3 +44,4 @@ def listar_obrigacoes(db: Session = Depends(get_db)):
         return db.query(ObrigacaoNecessaria).all()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao listar obrigações: {str(e)}")
+#

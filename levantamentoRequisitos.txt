@@ -54,5 +54,5 @@
 		1. Definir corretamente os schemas (Pydantic) e os modelos (SQLAlchemy).
 		2. Criar os endpoints com @app.get(), @app.post(), etc.
 		3. Rodar a API e acessar /docs no navegador.
-		
+		#
 	

@@ -32,3 +32,5 @@ class EmpresaOut(EmpresaCreate):
 
 class ObrigacaoNecessariaOut(ObrigacaoNecessariaCreate):
     id: int
+
+#

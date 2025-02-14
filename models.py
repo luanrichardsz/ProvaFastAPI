@@ -32,3 +32,5 @@ class ObrigacaoNecessaria(Base):
     empresa_id = Column(Integer, ForeignKey("empresas.id"), nullable=False) #chave estrangeira da tabela empresa
 
     empresa = relationship("Empresa", back_populates="obrigacoes") #Relacionamento para obrigacoes herdar de empresas
+
+#
