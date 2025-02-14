@@ -1,11 +1,11 @@
 1. Configuração do Ambiente
-	a. Criar um repositório no GitHub e compartilhar o link (Ja criado)
-	b. Para este projeto, colocar todos os arquivos na pasta raiz do
-	repositório (sem criar subpastas)
-		IMPORTANTE - Baixar PyCharm
+	a. Criar um repositório no GitHub e compartilhar o link (Ja criado) CHECK
+	b. Para este projeto, colocar todos os arquivos na pasta raiz do repositório (sem criar subpastas) CHECK
+		IMPORTANTE - Baixar PyCharm CHECK
 	c. Criar um ambiente virtual (PyCharm cria automaticamente) e instalar as dependências necessárias: pip install
-	fastapi[all] sqlalchemy psycopg2 pydantic
-	d. Configurar um banco de dados PostgreSQL com SQLAlchemy
+	fastapi[all] sqlalchemy psycopg2 pydantic CHECK
+	
+	d. Configurar um banco de dados PostgreSQL com SQLAlchemy CHECK
 
 2. Modelagem de Dados (SQLAlchemy & Pydantic): Criar os seguintes modelos:
 	Criar schemas Pydantic para entrada e saída de dados.
@@ -26,7 +26,7 @@
 3. Implementação de CRUD de Empresa e ObrigacaoAcessoria utilizando o FastAPI.
 	A entrada e saida que comentei em cima
 	
-4.Banco de Dados e Configuração:
+4. Banco de Dados e Configuração:
 	Criar um arquivo de configuração .env para armazenar as credenciais do banco de dados.
 	
 		Se você tiver muitas configurações que variem bastante, talvez em ambientes distintos, pode ser útil colocá-las em um arquivo e depois lê-las como se fossem variáveis de ambiente.
@@ -43,7 +43,7 @@
 			2. Criar a conexão com o PostgreSQL usando SQLAlchemy.
 			3. Executar a criação das tabelas com Base.metadata.create_all(engine).
 
-Testes e Documentação:
+5. Testes e Documentação:
 	a. Implementar testes unitários para validar os endpoints.
 		1. Usar uma biblioteca de testes como pytest.
 		2. Criar um banco de dados de testes (geralmente SQLite ou um PostgreSQL temporário).
